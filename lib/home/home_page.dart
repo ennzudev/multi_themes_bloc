@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:themed_app/home/tips_list.dart';
+import 'package:themed_app/settings/preferences_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-// TODO: agregar estilo a los textos de titulos
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hogar y Familia'),
-        // TODO: abrir pagina de ajustes
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => PreferencesPage()),
+            ),
+            icon: Icon(Icons.settings),
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 8, right: 8, top: 12),
